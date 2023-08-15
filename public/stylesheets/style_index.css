@@ -74,3 +74,13 @@ nav a:hover {
 .btn:hover {
     background-color: #1a73e8;
 }
+
+.navbar-text-center {
+    color: black;
+    width: 60%;
+}
+
+.nav_image {
+    position:relative;
+    right:25px;
+}
