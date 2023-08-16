@@ -1,109 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .container {
-            padding: 3rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .background img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .quote {
-            font-style: italic;
-            font-size: 1.3rem;
-            margin-top: 2rem;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animated {
-            animation: fadeIn 1s ease-in-out;
-        }
-    </style>
-</head>
-
 <body>
-    <div class="container">
-        <h1 class="animated">About Us</h1>
-        <p class="animated">Welcome to our world of <span style="color: rgba(255, 255, 255, 0.7);">creativity</span>, <span
-                style="color: rgba(255, 255, 255, 0.7);">innovation</span>, and <span
-                style="color: rgba(255, 255, 255, 0.7);">passion</span>. We are a
-            team of <span style="color: rgba(255, 255, 255, 0.7);">dedicated</span>
-            individuals
-            striving to make a <span style="color: rgba(255, 255, 255, 0.7);">difference</span> in the digital realm. With a
-            love for
-            <span style="color: rgba(255, 255, 255, 0.7);">design</span>, <span
-                style="color: rgba(255, 255, 255, 0.7);">technology</span>, and pushing
-            <span style="color: rgba(255, 255, 255, 0.7);">boundaries</span>, we're here to bring your <span
-                style="color: rgba(255, 255, 255, 0.7);">boldest
-                ideas</span> to life.</p>
-        <p class="animated">Our journey began with a shared <span style="color: rgba(255, 255, 255, 0.7);">vision</span>:
-            to create a
-            space where
-            <span style="color: rgba(255, 255, 255, 0.7);">imagination</span> knows no limits. Guided by our core values
-            of
-            <span style="color: rgba(255, 255, 255, 0.7);">excellence</span>, <span
-                style="color: rgba(255, 255, 255, 0.7);">collaboration</span>, and constant
-            <span style="color: rgba(255, 255, 255, 0.7);">growth</span>, we've embarked on a mission to <span
-                style="color: rgba(255, 255, 255, 0.7);">redefine</span> what's
-            <span style="color: rgba(255, 255, 255, 0.7);">possible</span>.</p>
-        <p class="animated">Through the <span style="color: rgba(255, 255, 255, 0.7);">synergy</span> of our diverse
-            talents, we craft <span
-                style="color: rgba(255, 255, 255, 0.7);">digital experiences</span> that <span
-                style="color: rgba(255, 255, 255, 0.7);">resonate</span>. From
-            cutting-edge <span style="color: rgba(255, 255, 255, 0.7);">websites</span> to <span
-                style="color: rgba(255, 255, 255, 0.7);">interactive
-                applications</span>, our work is a reflection of our unwavering <span
-                style="color: rgba(255, 255, 255, 0.7);">commitment</span>
-            to
-            <span style="color: rgba(255, 255, 255, 0.7);">quality</span> and <
+    <el-container style="width: 100%;max-width: 100%;">
+        <el-aside :width="calculateStyle+'px'">
+            <el-menu
+                    :default-active="activePath"
+                    class="el-menu-vertical-demo" unique-opened :collapse="isCollapse"
+                    :collapse-transition="false" router
+                    active-text-color="#409FFF">
+                <!--            一级菜单-->
+                <el-menu-item :index="item.path" v-for="item in menulist" :key="item.id">
+                    <i :class="iconsObj[item.id]"></i>
+                    <span>{{item.authName}}</span>
+                </el-menu-item>
+            </el-menu>
+        </el-aside>
+        <div style="width: 100%">
+            <el-header>
+                <div class="toggle-button" @click="toggleCollapse">|||
+                </div>
+                <div>
+                    <span>博客后台管理系统</span>
+                </div>
+                <div class="loginInfo">
+                    <el-avatar :src="userInfo.avatar"></el-avatar>
+                    <div class="user-option">
+                        <h3 class="web-font nickname">{{userInfo.nickname}}</h3>
+                        <p class="logout" @click="logout">退出登录</p>
+                    </div>
+                </div>
+            </el-header>
+            <el-main>
+                <router-view></router-view>
+            </el-main>
+        </div>
+    </el-container>
+</body>
