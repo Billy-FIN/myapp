@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var pw_auth_router = require('./routes/pwauth')
 
 var compression = require('compression');
+const csp = require('helmet-csp');
 var helmet = require('helmet');
 
 
@@ -74,6 +75,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(csp({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "cdn.jsdelivr.net"],
+    styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+    fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
+  },
+}));
 
 app.use(pw_auth_router);    //This is the pw_auth_router
 app.use(layouts);           //Use the layouts module
