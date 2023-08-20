@@ -9,9 +9,8 @@ var indexRouter = require('./routes/index');
 var pw_auth_router = require('./routes/pwauth')
 
 var compression = require('compression');
-const csp = require('helmet-csp');
-var helmet = require('helmet');
-
+// const csp = require('helmet-csp');
+// var helmet = require('helmet');
 
 // Connecting to a Mongo Database Server
 const mongodb_URI = 'mongodb://127.0.0.1:27017/pwdemo';
@@ -63,7 +62,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(helmet());          //Protects against well known vulnerabilities
+// app.use(helmet());          //Protects against well known vulnerabilities
 app.use(compression());      //Compress all routes
 
 // view engine setup
@@ -76,14 +75,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(csp({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "cdn.jsdelivr.net"],
-    styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
-    fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
-  },
-}));
+// app.use(csp({
+//   directives: {
+//     defaultSrc: ["'self'"],
+//     scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "cdn.jsdelivr.net"],
+//     styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+//     fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
+//     imgSrc: ["'self'", "cdn.jsdelivr.net"],
+//   },
+// }));
 
 app.use(pw_auth_router);    //This is the pw_auth_router
 app.use(layouts);           //Use the layouts module

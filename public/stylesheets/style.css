@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Courier New', monospace;
+    font-family: "Georgia";
     background-color: #000000;
     color: white;
     line-height: 1.6;
@@ -91,7 +91,7 @@ nav a:hover {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 75px;
