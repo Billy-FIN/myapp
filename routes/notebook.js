@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const NotesItem = require('../object_class/notesItem');
+const NotesItem = require('../object_class/NotesItem');
 
 router.get('/notebook', async function (req, res, next) {
   item = []
