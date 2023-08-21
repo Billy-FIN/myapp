@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Quick Notes for everyone to share
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <div class="filter">
+        <h1>
+            Notebook
+        </h1>
+        <p>Quick Notes for everyone to share</p>
+        <br>
+        <p class="d-inline-flex gap-1">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Add a new Note
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample" style="width: 80%;">
+            <form class="row g-3 needs-validation" method="post" action="notebook" novalidate>
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="validationCustom01" name="title" required>
+                    <div class="invalid-feedback">
+                        Please enter the title.
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="validationCustom04" class="form-label">Category</label>
+                    <select class="form-select" id="validationCustom04" name="category" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Art</option>
+                        <option>Automotive</option>
+                        <option>Beauty</option>
+                        <option>Books</option>
+                        <option>Business</option>
+                        <option>Career</option>
+                        <option>Cooking</option>
+                        <option>Culture</option>
+                        <option>DIY & Crafts</option>
+                        <option>Education</option>
+                        <option>Environment</option>
+                        <option>Fashion</option>
+                        <option>Finance</option>
+                        <option>Fitness</option>
+                        <option>Food</option>
+                        <option>Gaming</option>
+                        <option>Health</option>
+                        <option>History</option>
+                        <option>Hobbies</option>
+                        <option>Home & Garden</option>
+                        <option>Inspiration</option>
+                        <option>Languages</option>
+                        <option>Life</option>
+                        <option>Music</option>
+                        <option>Movies</option>
+                        <option>News</option>
+                        <option>Outdoors</option>
+                        <option>Parenting</option>
+                        <option>Pets</option>
+                        <option>Photography</option>
+                        <option>Politics</option>
+                        <option>Relationships</option>
+                        <option>Science</option>
+                        <option>Self-Care</option>
+                        <option>Spirituality</option>
+                        <option>Sports</option>
+                        <option>Technology</option>
+                        <option>Travel</option>
+                        <option>Wellness</option>
+                        <option>Others</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid category.
+                    </div>
+                </div>
+                <div class="col-md-4" style="width: 20%;">
+                    <label for="validationCustom02" class="form-label">Tag</label>
+                    <input type="text" class="form-control" id="validationCustom02" name="tag" value="example: #food"
+                        required>
+                    <div class="invalid-feedback">
+                        Please enter the tag.
+                    </div>
+                </div>
+                <div class="col-md-3" style="width: 78.5%; ;">
+                    <label for="validationTextarea" class="form-label">Details</label>
+                    <textarea class="form-control" id="validationTextarea" name="details"
+                        placeholder="Required some text" required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter the details.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Agree to public your notes to everyone
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit" value="store">Submit form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="note-table">
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Tag</th>
+            <th>Date</th>
+            <th>Created by</th>
+            <th>Operation</th>
+        </tr>
+        <% items.forEach(item=> { %>
+            <tr>
+                <td>
+                    <%= item.title %>
+                </td>
+                <td>
+                    <%= item.category %>
+                </td>
+                <td>
+                    <%= item.tag %>
+                </td>
+                <td>
+                    <%= item.date.toString().substr(0,24) %>
+                </td>
+                <td>
+                    <%= item.username %>
+                </td>
+                <td>
+                    <a href="/transaction/remove/<%=item._id %>">
+                        <i class="bi bi-hand-index-thumb"></i>
+                    </a>
+                    <!-- <a href="/transaction/edit/<%=item._id %>">
+                        <i class="bi bi-pencil-square"></i>
+                    </a> -->
+                </td>
+            </tr>
+            <% })%>
+
+    </table>
+    <script src="/js/validation.js"></script>
+</body>
+
+</html>
