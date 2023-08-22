@@ -56,4 +56,12 @@ router.post('/notebook',
   }
 )
 
+router.get('/notebook/show/:itemId',
+    async (req, res, next) => {
+        let result = await NotesItem.find({_id: req.params.itemId})
+        let details = result[0].details
+        res.send(result)
+    }
+)
+
 module.exports = router;
