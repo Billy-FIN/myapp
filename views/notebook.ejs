@@ -16,16 +16,27 @@
         <p>Quick Notes for everyone to share</p>
         <br>
         <p class="d-inline-flex gap-1">
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1"
+                aria-expanded="false" aria-controls="collapse-1">
                 Add a new Note
             </button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2"
+                aria-expanded="false" aria-controls="collapse-2" style="margin-left: 20px;">
+                Filter
+            </button>
         </p>
-        <div class="collapse" id="collapseExample" style="width: 80%;">
+        <div style="width: 30%; position: absolute; right: 2%; margin-top: -60px;">
+            <form class="d-flex" method="get" action="notebook" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchBy">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="collapse" id="collapse-1" style="width: 80%;">
             <form class="row g-3 needs-validation" method="post" action="notebook" novalidate>
                 <div class="col-md-4">
                     <label for="validationCustom01" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="validationCustom01" name="title" required>
+                    <input type="text" class="form-control" id="validationCustom01" name="title"
+                        placeholder="Required a title">
                     <div class="invalid-feedback">
                         Please enter the title.
                     </div>
@@ -81,8 +92,8 @@
                 </div>
                 <div class="col-md-4" style="width: 20%;">
                     <label for="validationCustom02" class="form-label">Tag</label>
-                    <input type="text" class="form-control" id="validationCustom02" name="tag" value="example: #food"
-                        required>
+                    <input type="text" class="form-control" id="validationCustom02" name="tag"
+                        placeholder="example: #food" required>
                     <div class="invalid-feedback">
                         Please enter the tag.
                     </div>
@@ -107,7 +118,68 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <button class="btn btn-primary" type="submit" value="store">Submit form</button>
+                    <button class="btn1" type="submit" value="store">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="collapse" id="collapse-2" style="width: 80%;">
+            <form class="row g-3" method="get" action="notebook" novalidate>
+                <div class="col-md-4" style="width: 15%;">
+                    <label for="validationCustom01" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="validationCustom01" name="selectBy">
+                </div>
+                <div class="col-md-3">
+                    <label for="validationCustom04" class="form-label">Category</label>
+                    <select class="form-select" id="validationCustom04" name="category">
+                        <option selected disabled value=""></option>
+                        <option>Art</option>
+                        <option>Automotive</option>
+                        <option>Beauty</option>
+                        <option>Books</option>
+                        <option>Business</option>
+                        <option>Career</option>
+                        <option>Cooking</option>
+                        <option>Culture</option>
+                        <option>DIY & Crafts</option>
+                        <option>Education</option>
+                        <option>Environment</option>
+                        <option>Fashion</option>
+                        <option>Finance</option>
+                        <option>Fitness</option>
+                        <option>Food</option>
+                        <option>Gaming</option>
+                        <option>Health</option>
+                        <option>History</option>
+                        <option>Hobbies</option>
+                        <option>Home & Garden</option>
+                        <option>Inspiration</option>
+                        <option>Languages</option>
+                        <option>Life</option>
+                        <option>Music</option>
+                        <option>Movies</option>
+                        <option>News</option>
+                        <option>Outdoors</option>
+                        <option>Parenting</option>
+                        <option>Pets</option>
+                        <option>Photography</option>
+                        <option>Politics</option>
+                        <option>Relationships</option>
+                        <option>Science</option>
+                        <option>Self-Care</option>
+                        <option>Spirituality</option>
+                        <option>Sports</option>
+                        <option>Technology</option>
+                        <option>Travel</option>
+                        <option>Wellness</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+                <div class="col-md-4" style="width: 20%;">
+                    <label for="validationCustom02" class="form-label">Tag</label>
+                    <input type="text" class="form-control" id="validationCustom02" name="tag">
+                </div>
+                <div class="col-12">
+                    <button class="btn1 btn-primary">Show</button>
                 </div>
             </form>
         </div>

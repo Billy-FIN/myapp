@@ -84,6 +84,39 @@ nav a:hover {
     background-color: #1a73e8;
 }
 
+.btn1 {
+    /* 文字颜色 */
+    color: #0099CC;
+    /* 清除背景色 */
+    background: transparent;
+    /* 边框样式、颜色、宽度 */
+    border: 2px solid #0099CC;
+    /* 给边框添加圆角 */
+    border-radius: 6px;
+    /* 字母转大写 */
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    /* text-align: center; */
+    display: inline-block;
+    /* font-size: 16px; */
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.btn1:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
 .navbar-text-center {
     color: black;
     width: 60%;
@@ -158,17 +191,19 @@ table.note-table {
     width: 100%;
     border: 2px solid white;
     margin-top: 20px
+}
 
-  }
-
-  table.note-table td {
-    border: 1px solid #e0e0e0; /* Set the border color for table cells */
+table.note-table td {
+    border: 1px solid #e0e0e0;
+    /* Set the border color for table cells */
     padding: 8px;
     text-align: center;
-  }
+}
 
-  table.note-table th {
-    border: 1px solid #e0e0e0; /* Set the border color for table cells */
+table.note-table th {
+    border: 1px solid #e0e0e0;
+    /* Set the border color for table cells */
     padding: 8px;
     /* text-align: center; */
-  }
+}
+
