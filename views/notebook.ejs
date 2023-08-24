@@ -123,15 +123,15 @@
             </form>
         </div>
         <div class="collapse" id="collapse-2" style="width: 80%;">
-            <form class="row g-3" method="get" action="notebook" novalidate>
+            <form class="row g-3" method="get" action="notebook">
                 <div class="col-md-4" style="width: 15%;">
                     <label for="validationCustom01" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="validationCustom01" name="selectBy">
+                    <input type="text" class="form-control" id="validationCustom01" name="username">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3" style="width: 20%;">
                     <label for="validationCustom04" class="form-label">Category</label>
                     <select class="form-select" id="validationCustom04" name="category">
-                        <option selected disabled value=""></option>
+                        <option></option>
                         <option>Art</option>
                         <option>Automotive</option>
                         <option>Beauty</option>
@@ -178,13 +178,22 @@
                     <label for="validationCustom02" class="form-label">Tag</label>
                     <input type="text" class="form-control" id="validationCustom02" name="tag">
                 </div>
+                <div class="col-md-3" style="width: 10%;">
+                    <label for="validationCustom04" class="form-label">Sort by</label>
+                    <select class="form-select" id="validationCustom04" name="sortBy">
+                        <option></option>
+                        <option>category</option>
+                        <option>tag</option>
+                        <option>username</option>
+                    </select>
+                </div>
                 <div class="col-12">
                     <button class="btn1 btn-primary">Show</button>
                 </div>
             </form>
         </div>
     </div>
-
+    <p>There are <%= items.length %> records</p>
     <table class="note-table">
         <tr>
             <th>Title</th>

@@ -107,8 +107,7 @@ router.post('/signup',
             } else if(code != '321654'){
                 res.send('Wrong code')
             } else if (passphrase != passphrase2) {
-                alert('Passphrases do not match')
-                res.redirect('/signup')
+                res.send('Passphrases do not match')
             } else {
                 const encrypted = await bcrypt.hash(passphrase, saltRounds);
 
