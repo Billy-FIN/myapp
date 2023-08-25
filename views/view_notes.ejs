@@ -17,5 +17,5 @@
         Created by: <%= result.username %><br><br>
         Content:
     </p>
-    <p class="animated"><%- result.details.replace(/\r?\n/g, "<br>").replace(/\s/g, "&nbsp;&nbsp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") %></p>
+    <p class="animated note-content"><%= result.details %></p>
 </div>
