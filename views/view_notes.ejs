@@ -8,7 +8,7 @@
     <title>Contact</title>
 </head>
 
-<div class="about-container">
+<div class="note-container">
     <p class="animated">
         Title: <%= result.title %><br>
         Category: <%= result.category %><br>
@@ -17,5 +17,5 @@
         Created by: <%= result.username %><br><br>
         Content:
     </p>
-    <pre class="animated"><%= result.details %></pre>
+    <p class="animated"><%- result.details.replace(/\r?\n/g, "<br>").replace(/\s/g, "&nbsp;&nbsp;") %></p>
 </div>

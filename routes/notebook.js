@@ -24,18 +24,19 @@ router.get('/notebook', async function (req, res, next) {
         [
           {
             $match: {
-                     $or: [{ title: { $regex: searchBy } },
-                           { category: { $regex: searchBy } },
-                           { tag: { $regex: searchBy } },
-                           { details: { $regex: searchBy } },
-                           { username: { $regex: searchBy } }],
-                    }
+              $or: [{ title: { $regex: searchBy } },
+              { category: { $regex: searchBy } },
+              { tag: { $regex: searchBy } },
+              { details: { $regex: searchBy } },
+              { username: { $regex: searchBy } }],
+            }
           },
           {
-            $match: { category: { $regex: req.query.category ? req.query.category : '' },
-                      tag: { $regex: req.query.tag ? req.query.tag : '' },
-                      username: { $regex: req.query.username? req.query.username : '' }
-                    }
+            $match: {
+              category: { $regex: req.query.category ? req.query.category : '' },
+              tag: { $regex: req.query.tag ? req.query.tag : '' },
+              username: { $regex: req.query.username ? req.query.username : '' }
+            }
           },
           {
             $sort: { [sortBy]: 1 }
@@ -61,7 +62,7 @@ router.post('/notebook',
         date: new Date(),
       })
     await note.save();
-    res.redirect('/notebook')
+    res.redirect('/notebook?q=null')
   }
 )
 
