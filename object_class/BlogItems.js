@@ -5,7 +5,8 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 var BlogItemSchema = Schema({
   title: String,
-  category: String,
+  subtitle: String,
+  tag: String,
   date: Date,
   display: Boolean,
   userId: { type: ObjectId, ref: 'user' },

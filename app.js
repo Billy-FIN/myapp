@@ -8,6 +8,8 @@ const layouts = require("express-ejs-layouts");
 const indexRouter = require('./routes/index');
 const pw_auth_router = require('./routes/pwauth')
 const notebookRouter = require('./routes/notebook');
+const blogRouter = require('./routes/blog');
+const backRouter = require('./routes/back');
 
 var compression = require('compression');
 // const csp = require('helmet-csp');
@@ -89,7 +91,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(pw_auth_router);    //This is the pw_auth_router
 app.use(layouts);           //Use the layouts module
 app.use('/', indexRouter);  //This is the default route
-app.use(notebookRouter);   //This is the notebook route
+app.use(notebookRouter);    //This is the notebook route
+app.use(blogRouter);        //This is the blog route
+app.use(backRouter);        //This is the back_management route
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
