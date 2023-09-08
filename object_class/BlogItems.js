@@ -4,11 +4,13 @@ const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 var BlogItemSchema = Schema({
+  card_title: String,
+  card_text: String,
+  card_picture: String,
   title: String,
-  subtitle: String,
+  content: String,
   tag: String,
   date: Date,
-  display: Boolean,
   userId: { type: ObjectId, ref: 'user' },
   username: String
 });
