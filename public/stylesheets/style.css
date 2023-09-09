@@ -139,7 +139,7 @@ nav a:hover {
 footer {
     position: relative;
     width: 100%;
-    height: 75px;
+    height: 80px;
     text-align: center;
     padding: 1rem;
     background-color: #1a1a1a;
@@ -238,7 +238,7 @@ table.note-table th {
     position: fixed; /* Fixed position to keep it visible while scrolling */
     top: 70px; /* Position it at the top */
     left: 0; /* Position it on the left */
-    height: 100%; /* Make it 100% of the viewport height */
+    height: 90%; /* Make it 100% of the viewport height */
     overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
     padding-top: 20px; /* Add some top padding */
 }
@@ -272,10 +272,10 @@ table.note-table th {
 
 .sidebar-outside {
     position: fixed;
-    top: 0;
+    top: 6%;
     left: 220px;
     width: 1700px;
-    height: 100%;
+    height: 90%;
     background: #dddfeb;
     color: black;
     transition: all 0.3s ease-in-out;
@@ -287,3 +287,52 @@ table.note-table th {
     margin-top: 20px; /* Adjust the margin to control the spacing between the sidebar and the divider */
 }
 
+
+.blog-content {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.blog-content h1{
+    margin: 10px;
+}
+
+.blog-list {
+    margin-top: 20px;
+}
+
+.blog-card {
+    background-color: #fff; /* Card background color */
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border-radius: 5px; /* Rounded corners for the card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for a raised effect */
+    width: 95%;
+}
+
+.blog-card h2 {
+    margin: 0;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+.delete {
+    color: #d43f3a;
+}
+
+.edit {
+    color: #002fa7;;
+}

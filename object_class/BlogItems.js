@@ -11,6 +11,7 @@ var BlogItemSchema = Schema({
   content: String,
   tag: String,
   date: Date,
+  status: Number,   // 0: blog, 1: draft, 2: trash
   userId: { type: ObjectId, ref: 'user' },
   username: String
 });

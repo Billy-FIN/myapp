@@ -4,16 +4,47 @@
     </div>
     <hr class="sidebar-divider">
     <ul>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Drafts</a></li>
-        <li><a href="#">...</a></li>
-        <li><a href="#">...</a></li>
-        <li><a href="#">Trash</a></li>
+        <li><a href="?interface=blogs">Blogs</a></li>
+        <li><a href="?interface=drafts">Drafts</a></li>
+        <li><a href="?interface=trash">Trash</a></li>
     </ul>
 
 </div>
 <div class="sidebar-outside">
+    <% if (status==-1) { %>
+        <div>
+            <%=  %>
+        </div>
+        <% } else { %>
+            <div class="blog-content">
+                <h1>Manage Your Blogs</h1>
+                <p style="margin-left: 10px;">View, add, edit, and delete blogs you own here.</p>
+                <div class="blog-list">
+                    <!-- Sample blog post -->
+                    <div class="blog-card">
+                        <h2>Blog Post Title 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in justo vel ante congue
+                            vulputate.</p>
+                        <div class="actions">
+                            <a class="edit" href="#">Edit</a>
+                            <a class="delete" href="#">Delete</a>
+                        </div>
+                    </div>
 
+                    <!-- Sample blog post -->
+                    <div class="blog-card">
+                        <h2>Blog Post Title 2</h2>
+                        <p>Curabitur dapibus, est id rhoncus malesuada, sem felis facilisis justo.</p>
+                        <div class="actions">
+                            <a class="edit" href="#">Edit</a>
+                            <a class="delete" href="#">Delete</a>
+                        </div>
+                    </div>
+
+                    <!-- Add more blog posts here -->
+                </div>
+            </div>
+            <% } %>
 </div>
 
 
