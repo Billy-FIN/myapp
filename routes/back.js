@@ -43,9 +43,13 @@ router.get('/back_management',
             }
           ]
         )
-        res.render('back_management', { items, status });
+      res.render('back_management', { items, status });
     }
   });
+
+router.get('/back_management/editor', function (req, res, next) {
+  res.render('editor', { layout: false });
+});
 
 
 
