@@ -1,2 +1,3 @@
 # myapp    
-will update later
+https://www.billyfinnn.me/
+An ongoing project - not so perfect
